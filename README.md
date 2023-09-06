@@ -1,1 +1,1 @@
-# express-ts-starter
+# Basic Image Hosting Server with Node and Express
