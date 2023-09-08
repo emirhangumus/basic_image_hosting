@@ -1,6 +1,6 @@
 # Basic Image Hosting Server with Node and Express + Blurhash
 
-A small image host and upload server with node and express.
+A small image host and upload server with node, express and typescript.
 
 ## Run on Your Computer
 
