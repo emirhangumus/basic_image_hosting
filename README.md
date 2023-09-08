@@ -7,7 +7,7 @@ A small image host and upload server with node and express.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/emirhangumus/basic_image_hosting.git
 ```
 
 Go to the project directory
