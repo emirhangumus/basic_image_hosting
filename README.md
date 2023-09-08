@@ -13,7 +13,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd basic_image_hosting
 ```
 
 Install required packages
