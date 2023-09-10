@@ -21,6 +21,13 @@ app.use(cors(corsOptions));
 
 app.use('/api/v1/public', express.static(path.join(process.cwd(), 'public')));
 
+app.get('/', (req: Request, res: Response) => {
+    res.status(200).json({
+        success: true,
+        message: 'Welcome to Image Provider API',
+    });
+});
+
 app.post('/api/v1/upload', upload.single('image'), async (req: Request, res: Response) => {
     try {
         if (!req.file) {

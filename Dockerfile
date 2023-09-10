@@ -14,4 +14,6 @@ RUN npm run build
 
 EXPOSE 4000
 
+VOLUME [ "/app" ]
+
 CMD ["npm", "run", "start"]
