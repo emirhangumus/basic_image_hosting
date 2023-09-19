@@ -7,11 +7,12 @@ import { encode } from 'blurhash';
 import Jimp from 'jimp';
 import cors from 'cors';
 import corsOptions from './middlewares/cors';
+import { auth } from './middlewares/auth';
 
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 app.use(express.json({ limit: '20mb' }));
 
@@ -28,7 +29,16 @@ app.get('/', (req: Request, res: Response) => {
     });
 });
 
-app.post('/api/v1/upload', upload.single('image'), async (req: Request, res: Response) => {
+/**
+ * @route POST /api/v1/upload
+ * @desc Uploads the images
+ * @access Private
+ * @param {string} authorization.headers - Bearer token
+ * @param {string} image.formData - Image
+ * @returns {object} Success
+ * @returns {object} Error
+ */
+app.post('/api/v1/upload', auth, upload.single('image'), async (req: Request, res: Response) => {
     try {
         if (!req.file) {
             throw new Error('Image not found - 0');
